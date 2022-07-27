@@ -1,7 +1,12 @@
+queue_rules:
+  - name: default
+    conditions: []
+
 pull_request_rules:
-  - name: Automatic merge ⬇️ on approval ✔
+  - name: Put me in default queue
     conditions:
-      - "#approved-reviews-by>=1"
+      - base=main
+      - label=queue
     actions:
-      merge:
-        method: merge
+      queue:
+        name: default
