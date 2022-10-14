@@ -16,6 +16,6 @@ jobs:
       - name: Synchronize changelog
         uses: DouglasBlackwood/gha-changelog-syncer@main
         with:
-          NOTION_API_KEY: hello
-          NOTION_DATABASE_ID: hello
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
