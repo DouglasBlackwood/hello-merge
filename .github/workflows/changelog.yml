@@ -2,14 +2,16 @@ name: Changelog sync
 
 on:
   pull_request_target:
-    branches: ["main"]
+    branches:
+      - main
     types:
       - closed
+      - labeled
 
 permissions: read-all
 
 jobs:
-  if_merged:
+  changelog_sync:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
