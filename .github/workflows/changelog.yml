@@ -18,3 +18,4 @@ jobs:
         with:
           NOTION_API_KEY: hello
           NOTION_DATABASE_ID: hello
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
