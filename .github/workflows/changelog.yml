@@ -12,7 +12,9 @@ permissions: read-all
 
 jobs:
   changelog_sync:
-    if: github.event.pull_request.merged == true && contains( github.event.pull_request.labels.*.name, 'need-changelog')
+    if: >
+      github.event.pull_request.merged == true 
+      && contains( github.event.pull_request.labels.*.name, 'need-changelog')
     runs-on: ubuntu-latest
     steps:
       - name: Synchronize changelog
