@@ -10,11 +10,3 @@ pull_request_rules:
     actions:
       queue:
         name: default
-  - name: test rebase
-    conditions:
-      - label=rebase
-    actions:
-      rebase:
-      label:
-        remove:
-          - rebase
