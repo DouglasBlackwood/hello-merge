@@ -3,7 +3,7 @@ queue_rules:
     conditions: []
 
 pull_request_rules:
-  - name: Put me in default queue
+  - name: Put me in the default queue
     conditions:
       - base=main
       - label=queue
