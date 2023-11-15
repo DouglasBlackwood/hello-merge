@@ -8,4 +8,5 @@ pull_request_rules:
       - base=main
       - label=queue
     actions:
-      queue: default
+      queue:
+        name: default
