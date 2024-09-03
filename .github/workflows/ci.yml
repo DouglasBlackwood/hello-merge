@@ -1,11 +1,27 @@
 name: Continuous Integration
 on:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          sleep 11
+
+      - name: Generate Fake JUnit Report
+        run: |
+          cat <<EOF > report.xml
+          <testsuites>
+            <testsuite name="ExampleTestSuite" tests="1" failures="0" errors="0" skipped="0">
+              <testcase classname="example.TestClass" name="testExample" time="0.001"/>
+            </testsuite>
+          </testsuites>
+          EOF
+          cat report.xml
+
+      - name: Mergify JUnit XML Upload
+        if: always()
+        uses: mergifyio/gha-ci-issues@v1
+        with:
+            report_paths: report.xml
