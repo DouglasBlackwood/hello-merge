@@ -27,6 +27,7 @@ jobs:
       - shell: bash
         env:
           FILES: toto.xml
+          MERGIFY_CI_ISSUES_TOKEN: abc
         run: |
           set -x
 
