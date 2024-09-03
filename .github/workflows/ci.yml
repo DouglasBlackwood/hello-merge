@@ -25,6 +25,8 @@ jobs:
           cat report.xml
 
       - shell: bash
+        env:
+          FILES: toto.xml
         run: |
           set -x
 
