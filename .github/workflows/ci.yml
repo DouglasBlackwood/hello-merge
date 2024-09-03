@@ -18,10 +18,12 @@ jobs:
             </testsuite>
           </testsuites>
           EOF
+
+      - name: Print JUnit Report Content
+        shell: bash
+        run: |
           cat report.xml
 
       - name: Mergify JUnit XML Upload
         if: always()
         uses: mergifyio/gha-ci-issues@v1
-        with:
-            report_paths: report.xml
