@@ -30,12 +30,12 @@ jobs:
 
           # Check if FILES and MERGIFY_CI_ISSUES_TOKEN are set and not empty
           if [ -z "$FILES" ]; then
-            echo "::error FILES is not set or is empty"
+            echo "::error::Error: FILES is not set or is empty"
             exit 1
           fi
       
           if [ -z "$MERGIFY_CI_ISSUES_TOKEN" ]; then
-            echo "::error MERGIFY_CI_ISSUES_TOKEN is not set or is empty"
+            echo "::error::Error: MERGIFY_CI_ISSUES_TOKEN is not set or is empty"
             exit 1
           fi
 
